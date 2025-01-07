@@ -18,7 +18,13 @@ This project was built as part of my assignment in the 'Software Engineering and
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [Python](https://www.python.org/)
 - [Flask](https://flask.palletsprojects.com/en/stable/)
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [Django](https://www.djangoproject.com/)
+- [SQL](https://www.microsoft.com/en-gb/sql-server/sql-server-downloads)
 - [MySQL](https://www.mysql.com/)
+- [Git](https://git-scm.com/)
+- [GitHub](https://github.com/)
 
 ## 📷 Screenshots <a name = "screenshots"></a>
 <h3>Home Page</h3>
