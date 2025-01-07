@@ -47,7 +47,7 @@ def database_search_user(input_data):
 
 # Searches for user type
 def database_search_user_type(username):
-    main_query = "SELECT user_acc_type FROM user_type INNER JOIN users ON users.fk_user_type_id = user_type.user_type_id WHERE users.user_name = " + username + ";"
+    main_query = "SELECT user_acc_type FROM user_type INNER JOIN users ON users.fk_user_type_id = user_type.user_type_id WHERE users.user_name = '" + username + "';"
     try:
         mycursor.execute(main_query)
         return mycursor.fetchone()
