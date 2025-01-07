@@ -1,9 +1,5 @@
 <h1 align="center">Order Management System</h1>
 
-<div align="center">
-  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-</div>
-
 ---
 
 <p align="center"> A flask web application for managing orders, with login and registration functionalities included.
