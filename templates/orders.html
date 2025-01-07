@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<button id="addOrderButton"><a href="/orders/add">Add Order</a></button>
+
+<table class="orderTable">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Order #</th>
+            <th>Order Date</th>
+            <th>Customer Name</th>
+            <th>Company</th>
+            <th>Order Total</th>
+            <th>Order Status</th>
+            <th>Item Count</th>
+            <th id="actionColumn">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in dataList %}
+        <tr>
+            <td></td>
+            {% if editInProcess == True and i.0|string == id %}
+                <form action="#" method="post">
+                    <td><input type="text" name="ordernumber" value="{{ i.0 }}" id="editTest"></td>
+                    <td><input type="text" name="orderdate" value="{{ i.1 }}" id="editTest"></td>
+                    <td><input type="text" name="customername" value="{{ i.2 }}" id="editTest"></td>
+                    <td><input type="text" name="company" value="{{ i.3 }}" id="editTest"></td>
+                    <td><input type="text" name="ordertotal" value="{{ i.4 }}" id="editTest"></td>
+                    <td>
+                        <select name="orderstatus" id="orderstatus">
+                            {% if i.5 == 'Paid' %}
+                                <option value="Paid">Paid</option>
+                                <option value="Unpaid">Unpaid</option>
+                            {% else %}
+                                <option value="unpaid">Unpaid</option>
+                                <option value="paid">Paid</option>
+                            {% endif %}
+                        </select>
+                    </td>
+                    <td><input type="text" name="itemcount" value="{{ i.6 }}" id="editTest"></td>
+                    <td>
+                        <button id="saveButton" type="submit">Save</button>
+                        <button id="cancelButton"><a href="/orders">Cancel</a></button>
+                    </td>
+                </form>
+            {% else %}
+                <td>{{i.0}}</td>
+                <td>{{i.1}}</td>
+                <td>{{i.2}}</td>
+                <td>{{i.3}}</td>
+                <td>{{i.4}}</td>
+                <td>{{i.5}}</td>
+                <td>{{i.6}} items</td>
+                <td>
+                    <button id="editButton"><a href="/orders/edit/{{i.0}}">Edit</a></button>
+                    <button id="deleteButton"><a href="/orders/delete/{{i.0}}">Delete</a></button>
+                </td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+        {% if addInProcess == True %}
+        <tr>
+            <td></td>
+            <form action="#" method="post">
+                <td><input type="text" name="ordernumber" value="" id="editTest"></td>
+                <td><input type="text" name="orderdate" value="" id="editTest"></td>
+                <td><input type="text" name="customername" value="" id="editTest"></td>
+                <td><input type="text" name="company" value="" id="editTest"></td>
+                <td><input type="text" name="ordertotal" value="" id="editTest"></td>
+                <td>
+                    <select name="orderstatus" id="orderstatus">
+                        <option value="Paid">Paid</option>
+                        <option value="Unpaid">Unpaid</option>
+                    </select>
+                </td>
+                <td><input type="text" name="itemcount" value="" id="editTest"></td>
+                <td>
+                    <button id="saveButton" type="submit">Add</button>
+                    <button id="cancelButton"><a href="/orders">Cancel</a></button>
+                </td>
+            </form>
+        </tr>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

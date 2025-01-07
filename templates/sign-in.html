@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="login_form">
+    <!-- Login form container -->
+    <form action="#" method="post">
+        <h3>Log in with</h3>
+        <div class="login_option">
+            <!-- Google button -->
+            <div class="option">
+                <a href="">
+                    <img src="../static/images/google.png"/>
+                    <span>Google</span>
+                </a>
+            </div>
+            <!-- Apple button -->
+            <div class="option">
+                <a href="">
+                    <img src="../static/images/apple.png"/>
+                    <span>Apple</span>
+                </a>
+            </div>
+        </div>
+        <!-- Login option separator -->
+        <p class="separator">
+            <span>or</span>
+        </p>
+        <!-- Email input box -->
+        <div class="input_box">
+            <label for="username">Username</label>
+            <input type="username" name="signin-username" placeholder="Enter your username" required />
+        </div>
+        <!-- Password input box -->
+        <div class="input_box">
+            <div class="password_title">
+                <label for="password">Password</label>
+            </div>
+            <input type="password" name="signin-password" placeholder="Enter your password" required />
+        </div>
+        <!-- Login button -->
+        <button type="submit">Log In</button>
+        <p class="sign_up">Don't have an account? <a href="/sign-up">Sign up</a></p>
+    </form>
+</div>
+{% endblock %}

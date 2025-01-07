@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    text-decoration: none !important;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    margin: 0px;
+    /* fits navbar to entire page width */
+}
+
+/* Nav Bar - start */
+.navbar {
+    background: #009879;
+    font-family: calibri;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a {
+    font-size: 35px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-left: 100px;
+    position: fixed;
+    color: white;
+}
+
+.logo img {
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 75px;
+    width: 75px;
+}
+
+.navbar li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar li a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+.navbar button {
+    background-color: black;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 120px;
+}
+
+.navbar button a {
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#links {
+    display: inline-block;
+}
+
+#currentUser {
+    margin-left: 5px;
+    margin-right: 17px;
+    font-weight: bold;
+}
+
+/* Nav Bar - end */
+
+/* Footer - start */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 25px;
+    background-color: #009879;
+    color: white;
+    text-align: center;
+}
+
+/* Footer - end */
+
+/* Home Page - start */
+.homePageContainer {
+    height: 650px;
+    width: 800px;
+    margin-left: 520px;
+    margin-top: 30px;
+    padding: 10px;
+    padding-right: 50px;
+    padding-left: 50px;
+    font-family: verdana;
+    background-color: #eeeeee;
+}
+
+.homePageContainer h1 {
+    margin-left: 220px;
+}
+
+.homePageContainer img {
+    height: 200px;
+    width: 650px;
+    margin-left: 80px;
+}
+
+.homePageContainer button {
+    margin-left: 350px;
+    margin-top: 5px;
+    border-radius: 35%;
+    padding: 20px;
+    background-color: rgb(38, 38, 221);
+}
+
+.homePageContainer a {
+    color: white;
+}
+
+/* Home Page - end */
+
+/* Order Table - start */
+#addOrderButton {
+    padding: 5px;
+    font-size: 20px;
+    background-color: green;
+    width: 150px;
+    margin-left: 1510px;
+    margin-top: 30px;
+}
+#addOrderButton a {
+    color: white;
+}
+#actionColumn {
+    text-align: center;
+}
+#editButton {
+    background-color: blue;
+    margin-left: 65px;
+    width: 60px;
+}
+#editButton a {
+    color: white;
+}
+#deleteButton {
+    text-decoration: none;
+    background-color: red;
+    width: 60px;
+}
+#deleteButton a {
+    color: white;
+}
+#saveButton {
+    background-color: green;
+    margin-left: 65px;
+    width: 60px;
+    color: white;
+}
+#cancelButton a {
+    color: black;
+}
+.orderTable {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 1400px;
+    height: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.orderTable thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.orderTable th,
+.orderTable td {
+    padding: 12px 15px;
+}
+
+.orderTable tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.orderTable tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.orderTable tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+#editTest {
+    font-size: 0.97em;
+    width: 95px;
+    padding: 0;
+    /*border-style: none;*/
+}
+
+#orderstatus {
+    margin-bottom:16px;
+    font-size: 0.97em;
+    width: 95px;
+    height: 20px;
+    padding: 0;
+}
+/* Order Table - end */
+
+/* Contact Page - start */
+.contact-wrapper {
+    background-color: #eeeeee;
+    top: 150px;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 92%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    width: 92%;
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.section-header {
+    text-align: center;
+    margin: 0 auto;
+    padding: 40px 0;
+    font: 300 60px 'Oswald', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    max-width: 840px;
+}
+
+/* Location, Phone, Email Section */
+.contact-list {
+    list-style-type: none;
+    margin-left: -30px;
+    padding-right: 20px;
+}
+
+.list-item {
+    line-height: 4;
+}
+
+.contact-text {
+    font: 300 18px 'Lato', sans-serif;
+    letter-spacing: 1.9px;
+    color: black;
+}
+
+.place {
+    margin-left: 62px;
+}
+
+.phone {
+    margin-left: 56px;
+}
+
+.gmail {
+    margin-left: 53px;
+}
+
+.social-media-list {
+    position: relative;
+    font-size: 22px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.social-media-list li a {
+    color: #fff;
+}
+
+.social-media-list li {
+    position: relative;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin: 10px 3px;
+    line-height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: rgb(27, 27, 27);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.social-media-list li:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 0 1px #fff;
+    transition: all .2s ease-in-out;
+}
+
+.social-media-list li:hover {
+    background-color: #fff;
+}
+
+.social-media-list li:hover:after {
+    opacity: 1;
+    transform: scale(1.12);
+    transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+}
+
+.social-media-list li:hover a {
+    color: #000;
+}
+
+.copyright {
+    font: 200 14px 'Oswald', sans-serif;
+    color: #555;
+    letter-spacing: 1px;
+    text-align: center;
+}
+/* Contact Page - end */
+
+/* Login Page - start */
+.login_form {
+    width: 100%;
+    max-width: 435px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 41px 30px;
+    margin-left: 720px;
+    margin-top: 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.login_form h3 {
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Google & Apple button styling */
+.login_form .login_option {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login_form .login_option .option {
+    width: calc(100% / 2 - 12px);
+}
+
+.login_form .login_option .option a {
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #F8F8FB;
+    border: 1px solid #DADAF2;
+    border-radius: 5px;
+    margin: 34px 0 24px 0;
+    text-decoration: none;
+    color: #171645;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.login_form .login_option .option a:hover {
+    background: #ededf5;
+    border-color: #626cd6;
+}
+
+.login_form .login_option .option a img {
+    max-width: 25px;
+}
+
+.login_form p {
+    text-align: center;
+    font-weight: 500;
+}
+
+.login_form .separator {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+/* Login option separator styling */
+.login_form .separator span {
+    background: #fff;
+    z-index: 1;
+    padding: 0 10px;
+    position: relative;
+}
+
+.login_form .separator::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    background: #C2C2C2;
+    display: block;
+}
+
+form .input_box label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* Input field styling */
+form .input_box input,
+select {
+    width: 90%;
+    height: 57px;
+    border: 1px solid #DADAF2;
+    border-radius: 5px;
+    outline: none;
+    background: #F8F8FB;
+    font-size: 17px;
+    padding: 0px 20px;
+    margin-bottom: 25px;
+    transition: 0.2s ease;
+}
+
+form .input_box select {
+    width: 100%;
+}
+
+form .input_box input:focus {
+    border-color: #626cd6;
+}
+
+form .input_box .password_title {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+form .input_box {
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: #626cd6;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Login button styling */
+form button {
+    width: 100%;
+    height: 56px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: #009879;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 28px;
+    transition: 0.3s ease;
+}
+/* Login Page - end */
+
+
+/* Error alert css */
+.errorAlert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    width: 500px;
+    position: fixed;
+    margin-left: 695px;
+    margin-top: 15px;
+}
+
+/* Success alert css */
+.successAlert {
+    padding: 20px;
+    background-color: green;
+    color: white;
+    width: 500px;
+    position: fixed;
+    margin-left: 695px;
+    margin-top: 15px;
+}
+
+/* Alert close button css */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Alert close button hover css */
+.closebtn:hover {
+    color: black;
+}

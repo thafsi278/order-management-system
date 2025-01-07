@@ -1,0 +1,73 @@
+<!-- Base HTML code that is repeatable for each page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/2b9cdc1c9a.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+	<title>Orders Page</title>
+</head>
+<body>
+
+	<!--Nav Bar - start -->
+	<nav class="navbar">
+		<div class="navdiv">
+			<div class="logo">
+				<a>OrderOps</a>
+				<img src="{{ url_for('static',filename='images/logo.png') }}">
+			</div>
+			<ul>
+				{% if userIsLoggedIn == True %}
+				<div id="links">
+					<li><a href="/index">Home</a></li>
+					<li><a href="/orders">Orders</a></li>
+					<li><a href="/contact-us">Contact Us</a></li>
+					{% if userType == 'Administrator' %}
+						<li id="currentUser">Welcome, {{ currentUser }} [ADMIN]</li>
+					{% else %}
+						<li id="currentUser">Welcome, {{ currentUser }}</li>
+					{% endif %}
+					<button><a href="/sign-out"><i class="fa fa-sign-in"></i> Sign Out</a></button>
+				</div>
+				{% else %}
+				<button><a href="/sign-in">Sign In</a></button>
+				<button><a href="/sign-up">Sign Up</a></button>
+				{% endif %}
+			</ul>
+		</div>
+	</nav>
+	<!--Nav Bar - end -->
+
+	{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+			{% for category, message in messages %}
+				{% if category == "error" %}
+				<div class="errorAlert">
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+					{{message}}
+				</div>
+				{% else %}
+				<div class="successAlert">
+					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+					{{message}}
+				</div>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+    {% endwith %}
+
+	<!-- Dynamic content -->
+	{% block content %}
+	{% endblock content %}
+
+	<!-- Footer - start -->
+	<footer>
+		<small>
+			Copyright © 2024 Thafsi's Development Archives. All Rights Reserved.
+		</small>
+	</footer>
+	<!-- Footer - end -->
+</body>
+</html>
