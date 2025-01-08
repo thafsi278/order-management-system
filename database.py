@@ -45,7 +45,7 @@ def database_search_user(input_data):
     except:
         return False
 
-# Searches for user type
+# Searches for user type and returns either value if query successful, or false if failed
 def database_search_user_type(username):
     main_query = "SELECT user_acc_type FROM user_type INNER JOIN users ON users.fk_user_type_id = user_type.user_type_id WHERE users.user_name = '" + username + "';"
     try:
