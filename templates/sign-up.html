@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
+<!-- Handles sign up functionality with post request in form-->
 {% block content %}
 <div class="login_form">
     <form action="#" method="post">
         <h3>Register here</h3>
+        <!-- Select field for whether user is administrator or regular -->
         <div class="input_box">
             <label for="user_type">User Type</label>
             <select name="user_type" id="user_type">
@@ -11,22 +13,26 @@
                 <option value="administrator">Administrator</option>
             </select>
         </div>
+        <!-- Username input box -->
         <div class="input_box">
             <label for="username">Username</label>
             <input type="username" name="username" id="username" placeholder="Enter your username" required />
         </div>
+        <!-- Password input box -->
         <div class="input_box">
             <div class="password_title">
                 <label for="password">Password</label>
             </div>
             <input type="password" name="password" id="password" placeholder="Enter your password" required />
         </div>
+        <!-- Re-enter password input box -->
         <div class="input_box">
             <div class="re-enter_password_title">
                 <label for="re-enter_password">Re-enter Password</label>
             </div>
             <input type="password" name="re-enter_password" id="re-enter_password" placeholder="Re-enter your password" required />
         </div>
+        <!-- Register button -->
         <button type="submit">Register</button>
         <p class="sign_up">Already have an account? <a href="/sign-in">Sign in</a></p>
     </form>

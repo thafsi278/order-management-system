@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
+<!-- Handles sign in functionality with post request in form -->
 {% block content %}
 <div class="login_form">
-    <!-- Login form container -->
+    <!-- Sign in form container -->
     <form action="#" method="post">
         <h3>Log in with</h3>
         <div class="login_option">
@@ -21,7 +22,7 @@
                 </a>
             </div>
         </div>
-        <!-- Login option separator -->
+        <!-- Sign in option separator -->
         <p class="separator">
             <span>or</span>
         </p>
@@ -37,7 +38,7 @@
             </div>
             <input type="password" name="signin-password" placeholder="Enter your password" required />
         </div>
-        <!-- Login button -->
+        <!-- Sign in button -->
         <button type="submit">Log In</button>
         <p class="sign_up">Don't have an account? <a href="/sign-up">Sign up</a></p>
     </form>

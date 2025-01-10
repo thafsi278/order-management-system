@@ -19,15 +19,17 @@
 				<img src="{{ url_for('static',filename='images/logo.png') }}">
 			</div>
 			<ul>
-				{% if userIsLoggedIn == True %}
+				<!-- if user is logged in, show navigation bar links -->
+				{% if logged_in == True %}
 				<div id="links">
 					<li><a href="/index">Home</a></li>
 					<li><a href="/orders">Orders</a></li>
 					<li><a href="/contact-us">Contact Us</a></li>
-					{% if userType == 'Administrator' %}
-						<li id="currentUser">Welcome, {{ currentUser }} [ADMIN]</li>
+					<!-- if user is admin, show in nav bar next to name. Else just show name for regular users -->
+					{% if user_type == 'Administrator' %}
+						<li id="currentUser">Welcome, {{ logged_in_user }} [ADMIN]</li>
 					{% else %}
-						<li id="currentUser">Welcome, {{ currentUser }}</li>
+						<li id="currentUser">Welcome, {{ logged_in_user }}</li>
 					{% endif %}
 					<button><a href="/sign-out"><i class="fa fa-sign-in"></i> Sign Out</a></button>
 				</div>
@@ -40,6 +42,7 @@
 	</nav>
 	<!--Nav Bar - end -->
 
+	<!-- get messages and loop over categories. For each message, check if error or succes and display appropriate html with css and message in body-->
 	{% with messages = get_flashed_messages(with_categories=true) %}
 		{% if messages %}
 			{% for category, message in messages %}

@@ -2,8 +2,10 @@
 
 {% block content %}
 
+<!-- button for add order functionality -->
 <button id="addOrderButton"><a href="/orders/add">Add Order</a></button>
 
+<!-- Creating table for orders -->
 <table class="orderTable">
     <thead>
         <tr>
@@ -19,10 +21,12 @@
         </tr>
     </thead>
     <tbody>
-        {% for i in dataList %}
+        <!-- Looping over each entry in list and creating new row of data in table -->
+        {% for i in data_list %}
         <tr>
             <td></td>
-            {% if editInProcess == True and i.0|string == id %}
+            <!-- If user is editing, get current values of the selected order id and set as default values in input fields. Enables users to update any fields with current information -->
+            {% if edit_in_process == True and i.0|string == id %}
                 <form action="#" method="post">
                     <td><input type="text" name="ordernumber" value="{{ i.0 }}" id="editTest"></td>
                     <td><input type="text" name="orderdate" value="{{ i.1 }}" id="editTest"></td>
@@ -31,21 +35,24 @@
                     <td><input type="text" name="ordertotal" value="{{ i.4 }}" id="editTest"></td>
                     <td>
                         <select name="orderstatus" id="orderstatus">
+                            <!-- Set to Paid or Unpaid based on current value-->
                             {% if i.5 == 'Paid' %}
                                 <option value="Paid">Paid</option>
                                 <option value="Unpaid">Unpaid</option>
                             {% else %}
-                                <option value="unpaid">Unpaid</option>
-                                <option value="paid">Paid</option>
+                                <option value="Unpaid">Unpaid</option>
+                                <option value="Paid">Paid</option>
                             {% endif %}
                         </select>
                     </td>
                     <td><input type="text" name="itemcount" value="{{ i.6 }}" id="editTest"></td>
                     <td>
+                        <!-- Buttons to save edit or cancel -->
                         <button id="saveButton" type="submit">Save</button>
                         <button id="cancelButton"><a href="/orders">Cancel</a></button>
                     </td>
                 </form>
+            <!-- Else condition for when simply displaying all orders from database -->
             {% else %}
                 <td>{{i.0}}</td>
                 <td>{{i.1}}</td>
@@ -55,13 +62,15 @@
                 <td>{{i.5}}</td>
                 <td>{{i.6}} items</td>
                 <td>
+                    <!-- Buttons to edit or delete row of data -->
                     <button id="editButton"><a href="/orders/edit/{{i.0}}">Edit</a></button>
                     <button id="deleteButton"><a href="/orders/delete/{{i.0}}">Delete</a></button>
                 </td>
             {% endif %}
         </tr>
         {% endfor %}
-        {% if addInProcess == True %}
+        <!-- If user is adding order, create input fields with blank values and display as new row in table -->
+        {% if add_in_process == True %}
         <tr>
             <td></td>
             <form action="#" method="post">
@@ -78,6 +87,7 @@
                 </td>
                 <td><input type="text" name="itemcount" value="" id="editTest"></td>
                 <td>
+                    <!-- buttons to save or cancel adding functionality -->
                     <button id="saveButton" type="submit">Add</button>
                     <button id="cancelButton"><a href="/orders">Cancel</a></button>
                 </td>

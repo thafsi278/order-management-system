@@ -31,8 +31,8 @@ def validate_sign_up(input_data):
     password = input_data[1]
     username_length = len(username)
     password_length = len(password)
-    type = input_data[2]
     signup_is_valid = False
+    # validations to check and set return string
     if username_length < 6 or username_length > 18:
         return_string = "Username must be greater than 6, and less than 18 characters."
     elif password_length < 6 or password_length > 18:
@@ -41,11 +41,12 @@ def validate_sign_up(input_data):
         return_string = "Password must contain atleast one special character."
     elif not(has_numbers(password)):
         return_string = "Password must contain atleast one number."
-    else:
+    # if all checks are complete, set successful return string message and is valid to true
+    else: 
         return_string = "User: " + username + " has been successfully registered!"
         signup_is_valid = True
-    returnDict = dict(is_valid = signup_is_valid, validation_message = return_string)
-    return returnDict
+    return_dict = dict(is_valid = signup_is_valid, validation_message = return_string)
+    return return_dict
 
 ## Validates order data, entered by user. Returns dictionary with boolean and appropriate string message, based on conditions below.
 def validate_order(input_data):
@@ -58,6 +59,7 @@ def validate_order(input_data):
     item_count = input_data[6]
     order_is_valid = False
     date_is_valid = False
+    # validations to check and set return string
     try:
         datetime.strptime(order_date, "%Y-%m-%d").date()
         date_is_valid = True
@@ -69,13 +71,14 @@ def validate_order(input_data):
         return_string = "Date must be in ISO format e.g. 2042-12-23."
     elif (len(customer_name) < 3 or len(customer_name) > 13):
         return_string = "Name must be between 3, and 13 characters."
-    elif (len(company) < 3 or len(company) > 7):
+    elif (len(company) < 3 or len(company) > 13):
         return_string = "Company must be between 3, and 13 characters."
     elif (not(is_float(order_total))):
         return_string = "Total must be a number."
     elif (not(is_int(item_count))):
         return_string = "Item count must be a number."
+    # if all checks are complete, set is valid to true
     else:
         order_is_valid = True
-    returnDict = dict(is_valid = order_is_valid, validation_message = return_string)
-    return returnDict
+    return_dict = dict(is_valid = order_is_valid, validation_message = return_string)
+    return return_dict
